@@ -91,7 +91,7 @@ class Test():
         #print("hello selenium")
         monkeyCommand = "adb shell monkey -p com.meizu.flyme.find --pct-touch 50 --pct-motion 15 --pct-anyevent 5 --pct-majornav 12 --pct-trackball 1 --pct-nav 0 --pct-syskeys 15 --pct-appswitch 2 --throttle 500  -v-v-v 1200000000"
         os.system(monkeyCommand)
-        print("here")
+        print("tijiao from Home")
         
 
 if __name__ == "__main__":
