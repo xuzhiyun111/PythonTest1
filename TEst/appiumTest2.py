@@ -4,7 +4,7 @@ import unittest
 from appium import webdriver
 from time import sleep
 import os
-
+import HTMLTestRunner
 
 
 class Test():
@@ -21,7 +21,7 @@ class Test():
         self.desired_caps = {}
         self.desired_caps['platformName'] = 'Android'
         self.desired_caps['platformVersion'] = '11'
-        self.desired_caps['deviceName'] = '181QGEXN222BW'
+        self.desired_caps['deviceName'] = '191QAEXTDYMD3'
         self.desired_caps['appPackage'] = 'com.meizu.flyme.find'
         self.desired_caps['appActivity'] = '.ui.LoginActivity'
         self.desired_caps["unicodeKeyboard"] = True
@@ -88,11 +88,15 @@ class Test():
         el11 = self.driver.find_element_by_id("android:id/button1")
         el11.click()
         sleep(3)
+        el12 = self.driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
+        el12.click()
+        el13 = self.driver.find_element_by_id("com.meizu.flyme.find:id/gg").text
+        print(el13)
+        self.assertEqual('m2172',el13)
         #print("hello selenium")
-        monkeyCommand = "adb shell monkey -p com.meizu.flyme.find --pct-touch 50 --pct-motion 15 --pct-anyevent 5 --pct-majornav 12 --pct-trackball 1 --pct-nav 0 --pct-syskeys 15 --pct-appswitch 2 --throttle 500  -v-v-v 1200000000"
-        os.system(monkeyCommand)
-        print("tijiao from Home")
-        
+        #monkeyCommand = "adb shell monkey -p com.meizu.flyme.find --pct-touch 50 --pct-motion 15 --pct-anyevent 5 --pct-majornav 12 --pct-trackball 1 --pct-nav 0 --pct-syskeys 15 --pct-appswitch 2 --throttle 500  -v-v-v 1200000000"
+        #os.system(monkeyCommand)
+        #print("tijiao from Home")
 
 if __name__ == "__main__":
 
